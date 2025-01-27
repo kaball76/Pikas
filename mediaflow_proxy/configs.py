@@ -51,10 +51,10 @@ class TransportConfig(BaseSettings):
 
 
 class Settings(BaseSettings):
-    api_password: str | None = None  # The password for protecting the API endpoints.
+    api_password: str =Pocholo | None = None  # The password for protecting the API endpoints.
     log_level: str = "INFO"  # The logging level to use.
     transport_config: TransportConfig = Field(default_factory=TransportConfig)  # Configuration for httpx transport.
-    enable_streaming_progress: bool = False  # Whether to enable streaming progress tracking.
+    enable_streaming_progress: bool = True  # Whether to enable streaming progress tracking.
 
     user_agent: str = (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"  # The user agent to use for HTTP requests.
